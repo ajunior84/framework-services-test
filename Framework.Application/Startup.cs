@@ -1,3 +1,4 @@
+using Framework.Service;
 using Framework.Service.Interfaces;
 using Framework.Service.Services;
 using MediatR;
@@ -77,7 +78,7 @@ namespace Framework.Application
                     opts.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
             services.AddMediatR(typeof(Startup));
-            services.AddTransient<IMathService, MathService>();
+            services.AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
